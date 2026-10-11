@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10150f">
+  <meta name="description" content="Rejoins Orito SMP, un serveur Minecraft public et gratuit.">
+  <title>Orito SMP — serveur Minecraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="../" aria-label="Orito, accueil">
+      <span class="brand-mark" aria-hidden="true">O</span>
+      <span>ORITO <span class="brand-divider">/</span> SMP</span>
+    </a>
+    <a class="home-link" href="../">Retour au site <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="eyebrow-block" aria-hidden="true"></span> SURVIE MULTIJOUEUR · PUBLIC · GRATUIT</p>
+        <h1 id="page-title">ORITO<br><span>SMP</span></h1>
+        <p class="lede">Un monde à construire, une économie à faire grandir et des aventures à écrire ensemble. Rejoins la communauté et fais ta place.</p>
+        <a class="join-link" href="#connexion">Rejoindre le serveur <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="world-art" role="img" aria-label="Paysage pixelisé de collines et de blocs">
+        <div class="sun"></div>
+        <div class="mountain mountain-back"></div>
+        <div class="mountain mountain-front"></div>
+        <div class="ground"></div>
+        <div class="tree tree-one"><i></i><b></b></div>
+        <div class="tree tree-two"><i></i><b></b></div>
+        <span class="world-coordinate">WORLD 01 · JAVA</span>
+      </div>
+    </section>
+
+    <section class="server-overview" aria-label="État du serveur">
+      <div class="status-block">
+        <p class="section-label">ÉTAT DU SERVEUR</p>
+        <div class="status-line">
+          <span class="status-dot is-loading" id="status-dot" aria-hidden="true"></span>
+          <strong id="server-status" role="status" aria-live="polite">Vérification…</strong>
+        </div>
+        <p class="status-detail" id="status-detail">Connexion au service de statut</p>
+      </div>
+      <div class="players-block">
+        <p class="section-label">JOUEURS CONNECTÉS</p>
+        <p class="players-count" id="players-count">— <span>/ —</span></p>
+        <p class="status-detail" id="players-detail">Données en cours de chargement</p>
+      </div>
+      <button class="refresh-button" id="refresh-status" type="button" aria-label="Actualiser le statut" title="Actualiser le statut">
+        <span aria-hidden="true">↻</span>
+      </button>
+    </section>
+
+    <section class="details-grid" id="connexion" aria-label="Connexion et informations">
+      <article class="connect-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-label">ADRESSE DE CONNEXION</p>
+            <h2>On se retrouve en jeu.</h2>
+          </div>
+          <span class="edition-tag">JAVA</span>
+        </div>
+        <div class="address-row">
+          <code id="server-address">cairo-seal.tun.ply.gg:13065</code>
+          <button class="copy-button" id="copy-address" type="button" title="Copier l'adresse" aria-label="Copier l'adresse du serveur">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1.5"></rect><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"></path></svg>
+            <span id="copy-label">Copier</span>
+          </button>
+        </div>
+        <p class="connect-hint" id="copy-feedback" aria-live="polite">Minecraft Java Edition · colle l’adresse dans Multijoueur.</p>
+      </article>
+
+      <article class="about-panel">
+        <p class="section-label">À PROPOS</p>
+        <h2>Le monde est à vous.</h2>
+        <p>Orito SMP est un serveur de survie public et gratuit, inspiré des serveurs où l’on bâtit son aventure à plusieurs. Explore, échange et crée sans frais d’accès.</p>
+        <div class="plugin-list" aria-label="Fonctionnalités du serveur">
+          <span>Survie</span><span>Économie</span><span>Communauté</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="admin-note" aria-labelledby="admin-title">
+      <div class="admin-icon" aria-hidden="true">⌘</div>
+      <div>
+        <p class="section-label">ADMINISTRATION</p>
+        <h2 id="admin-title">Commandes du serveur</h2>
+        <p>Les commandes sont réservées au panneau admin. Son API privée n’est pas encore configurée.</p>
+      </div>
+      <a class="admin-link" href="admin/">Ouvrir le panneau <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <p class="status-credit">Statut fourni par <a href="https://mcsrvstat.us/" target="_blank" rel="noopener noreferrer">mcsrvstat.us</a>. Actualisation automatique toutes les 60 secondes.</p>
+  </main>
+
+  <footer class="shell footer">
+    <span>ORITO SMP</span>
+    <span><a href="../">Retour à Orito</a></span>
+  </footer>
+</body>
+</html>

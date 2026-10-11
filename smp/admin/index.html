@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10150f">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Administration — Orito SMP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="admin.css">
+  <script src="config.js" defer></script>
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="../" aria-label="Retour à Orito SMP">
+      <span class="brand-mark" aria-hidden="true">O</span>
+      <span>ORITO <span class="brand-divider">/</span> ADMIN</span>
+    </a>
+    <a class="home-link" href="../">Retour au serveur <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="shell admin-main">
+    <div class="admin-heading">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-block" aria-hidden="true"></span> CONSOLE PRIVÉE</p>
+        <h1>Console<br><span>du serveur</span></h1>
+      </div>
+      <button class="refresh-button" id="refresh-admin" type="button" aria-label="Actualiser les données" title="Actualiser les données" disabled>
+        <span aria-hidden="true">↻</span>
+      </button>
+    </div>
+
+    <section class="access-state" aria-labelledby="access-title">
+      <span class="status-dot is-unavailable" id="access-dot" aria-hidden="true"></span>
+      <div>
+        <h2 id="access-title">API privée non configurée</h2>
+        <p id="access-message" role="status" aria-live="polite">Aucune commande ne sera envoyée. L’accès nécessitera une connexion au réseau privé et une autorisation vérifiée par le backend.</p>
+      </div>
+    </section>
+
+    <section class="admin-metrics" aria-label="État de la machine et du serveur">
+      <article class="metric-panel">
+        <p class="section-label">MACHINE UBUNTU</p>
+        <p class="metric-value" id="host-status">Indisponible</p>
+        <p class="metric-detail" id="host-detail">État inconnu tant que l’API privée est inaccessible.</p>
+      </article>
+      <article class="metric-panel">
+        <p class="section-label">SERVICE MINECRAFT</p>
+        <p class="metric-value" id="minecraft-status">Indisponible</p>
+        <p class="metric-detail" id="minecraft-detail">Ne signifie pas que la machine Ubuntu est arrêtée.</p>
+      </article>
+      <article class="metric-panel">
+        <p class="section-label">JOUEURS</p>
+        <p class="metric-value" id="admin-players">— <span>/ —</span></p>
+        <p class="metric-detail" id="admin-players-detail">Données indisponibles</p>
+      </article>
+    </section>
+
+    <section class="admin-actions-panel" aria-labelledby="actions-title">
+      <div class="admin-section-heading">
+        <div>
+          <p class="section-label">ACTIONS AUTORISÉES</p>
+          <h2 id="actions-title">Contrôle de Minecraft</h2>
+        </div>
+        <span class="fixed-actions">LISTE FIXE</span>
+      </div>
+      <div class="action-buttons">
+        <button id="start-server" type="button" disabled>Démarrer</button>
+        <button id="stop-server" type="button" disabled>Arrêter proprement</button>
+        <button id="restart-server" type="button" disabled>Redémarrer</button>
+      </div>
+      <p class="metric-detail" id="action-result" role="status" aria-live="polite">Les actions s’activeront uniquement après authentification auprès du backend.</p>
+    </section>
+
+    <section class="logs-panel" aria-labelledby="logs-title">
+      <div class="admin-section-heading">
+        <div>
+          <p class="section-label">JOURNAL SYSTEMD</p>
+          <h2 id="logs-title">Derniers événements utiles</h2>
+        </div>
+        <span class="fixed-actions">80 LIGNES MAX.</span>
+      </div>
+      <pre id="server-logs" role="log" aria-live="polite">Les logs seront disponibles lorsque l’API privée sera configurée.</pre>
+    </section>
+
+    <p class="admin-footnote">Cette page statique n’authentifie personne. Chaque route d’administration doit vérifier l’identité et l’autorisation côté serveur.</p>
+  </main>
+
+  <footer class="shell footer">
+    <span>ORITO SMP · ADMINISTRATION</span>
+    <span><a href="../">Retour au serveur</a></span>
+  </footer>
+</body>
+</html>
